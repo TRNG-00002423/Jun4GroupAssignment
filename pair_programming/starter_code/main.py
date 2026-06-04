@@ -72,8 +72,27 @@ def main():
     # 9. Use set operations on categories
     # TODO: Show union, intersection with another set
 
+    inventory_categories = set(product.category for product in inv.products.values())
+    common_store_categories = {"electronics", "pets", "clothing", "household"}
+
+    print("\n--- Category Set Operations ---")
+    print("Inventory categories:", inventory_categories)
+    print("Other categories:", common_store_categories)
+    print("Union:", inventory_categories | common_store_categories)
+    print("Intersection:", inventory_categories & common_store_categories)
+    print("Only in inventory:", inventory_categories - common_store_categories)
+
     # 10. Use a tuple to store immutable product configurations
     # TODO: Create product configs as tuples, iterate over them
+    product_configs = (
+        ("Gaming Chair", 150, "furniture", 4),
+        ("Desk Lamp", 25, "household", 10),
+        ("Water Bottle", 12, "fitness", 30),
+    )
+
+    print("\n--- Tuple Product Configurations ---")
+    for name, price, category, stock in product_configs:
+        print(f"Config: {name}, Price: ${price}, Category: {category}, Stock: {stock}")
 
 
 if __name__ == "__main__":
