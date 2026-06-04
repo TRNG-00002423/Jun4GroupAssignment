@@ -17,8 +17,8 @@ def main():
     inv.add_product(Product("Fish Food", 10, category="pets", stock=99))
     inv.add_product(Product("Trash Bag", 1, category="household", stock=120))
     inv.add_product(Product("Monster Energy Drinks", 5, category="food/drinks", stock=55))
-    inv.add_product(Product("Chicken Nuggets", 10, category="food/drink", stock=22))
-    inv.add_product(Product("Protein Shakes", 6, category="food/drink", stock=12))
+    inv.add_product(Product("Chicken Nuggets", 10, category="food/drinks", stock=22))
+    inv.add_product(Product("Protein Shakes", 6, category="food/drinks", stock=12))
     inv.add_product(Product("Cat Food", 5, category="pets", stock=3))
     inv.add_product(Product("Pro Camera", 80, category="electronics", stock=1))
     
