@@ -13,12 +13,30 @@ def main():
 
     # 1. Add at least 8 products across 3+ categories
     # TODO
+    inv.add_product(Product("Computer", 120, category="electronics", stock=2))
+    inv.add_product(Product("Fish Food", 10, category="pets", stock=99))
+    inv.add_product(Product("Trash Bag", 1, category="household", stock=120))
+    inv.add_product(Product("Monster Energy Drinks", 5, category="food/drinks", stock=55))
+    inv.add_product(Product("Chicken Nuggets", 10, category="food/drink", stock=22))
+    inv.add_product(Product("Protein Shakes", 6, category="food/drink", stock=12))
+    inv.add_product(Product("Cat Food", 5, category="pets", stock=3))
+    inv.add_product(Product("Pro Camera", 80, category="electronics", stock=1))
     
     # 2. Display all products (sorted by price)
     # TODO: Use sorted() with the __lt__ dunder
+    products = list(inv.products.values())
+
+    for product in sorted(products):
+        print(product)
+        print("\n")
 
     # 3. Search for products containing "pro"
     # TODO: Use inv.search()
+    matching_search_products = inv.search("pro")
+
+    for product in matching_search_products:
+        print(product)
+        print("\n")
 
     # 4. Show products in a specific category
     # TODO

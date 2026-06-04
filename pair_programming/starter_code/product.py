@@ -39,16 +39,17 @@ class Product:
 
     def __contains__(self, substr):
         return substr.lower() in self.product_name.lower()
-    
-p1 = Product("Laptop", 999.99, stock=15, category="electronics")
-p2 = Product("Laptop", 1099.99, stock=5, category="electronics")
-p3 = Product("Mouse", 29.99, stock=50, category="electronics")
 
-print(p1)                    # Laptop ($999.99) — 15 in stock
-print(repr(p1))              # Product('Laptop', 999.99, stock=15, category='electronics')
-print(p1 == p2)              # True (same name + category)
-print(p1 < p3)               # False (999.99 > 29.99)
-print(sorted([p1, p3]))      # Sorted by price
-print(bool(p1))              # True (in stock)
-print("laptop" in p1)        # True (case-insensitive search)
-print({p1, p2})              # Set with ONE item (they're equal)
+if __name__ == "__main__":
+    p1 = Product("Laptop", 999.99, stock=15, category="electronics")
+    p2 = Product("Laptop", 1099.99, stock=5, category="electronics")
+    p3 = Product("Mouse", 29.99, stock=50, category="electronics")
+
+    print(p1)                    # Laptop ($999.99) — 15 in stock
+    print(repr(p1))              # Product('Laptop', 999.99, stock=15, category='electronics')
+    print(p1 == p2)              # True (same name + category)
+    print(p1 < p3)               # False (999.99 > 29.99)
+    print(sorted([p1, p3]))      # Sorted by price
+    print(bool(p1))              # True (in stock)
+    print("laptop" in p1)        # True (case-insensitive search)
+    print({p1, p2})              # Set with ONE item (they're equal)
