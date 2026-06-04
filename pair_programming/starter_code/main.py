@@ -40,6 +40,9 @@ def main():
 
     # 4. Show products in a specific category
     # TODO
+    for product in inv.by_category('electronics'):
+        print(product)
+
 
     # 5. Sell products — include at least one that fails
     try:
@@ -57,9 +60,14 @@ def main():
 
     # 7. Show transaction history
     # TODO: Print recent entries from inv.history
+    for transactions in inv.history:
+        print(transactions)
 
     # 8. Show inventory summary (using comprehension-powered summary())
     # TODO
+    summary = inv.summary()
+    for key, value in summary.items():
+        print(f'{key}: {value}')
 
     # 9. Use set operations on categories
     # TODO: Show union, intersection with another set
