@@ -31,14 +31,14 @@ class Inventory:
         try:
             del self.products[product_id]
         except:
-            raise ProductNotFoundError
+            raise ProductNotFoundError(product_id)
 
     def get_product(self, product_id):
         """Get a product by ID. Raise ProductNotFoundError if missing."""
         try:
             return self.products[product_id]
         except:
-            raise ProductNotFoundError
+            raise ProductNotFoundError(product_id)
         
     def sell(self, product_id, quantity):
         """Sell units of a product.
@@ -49,11 +49,11 @@ class Inventory:
         try:
             product = self.products[product_id]
             if product.stock < quantity:
-                raise InsufficientStockError
+                raise InsufficientStockError(product.product_name, quantity, product.stock)
             product.stock -= quantity
             self.history.append((product_id, quantity))
         except KeyError:
-            raise ProductNotFoundError
+            raise ProductNotFoundError(product_id)
     
     def restock(self, product_id, quantity):
         """Add stock. Raise ProductNotFoundError if missing."""
@@ -62,7 +62,7 @@ class Inventory:
             product.stock += quantity
             self.history.append((product_id, quantity))
         except KeyError:
-            raise ProductNotFoundError
+            raise ProductNotFoundError(product_id)
 
     # --- Comprehension-powered queries ---
 
